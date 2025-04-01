@@ -6,7 +6,7 @@ namespace HelloMauiMarkup;
 partial class MainViewModel : BaseViewModel
 {
 	[ObservableProperty]
-	int _clickCount = 0;
+	public partial int ClickCount { get; set; } = 0;
 
 	[RelayCommand]
 	void IncrementClickMeButton() => ClickCount++;

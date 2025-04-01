@@ -1,6 +1,8 @@
 ﻿namespace HelloMauiMarkup;
 
-class App : Application
+class App(AppShell appShell) : Application
 {
-	public App(AppShell appShell) => MainPage = appShell;
+	readonly AppShell _appShell = appShell;
+
+	protected override Window CreateWindow(IActivationState? activationState) => new(_appShell);
 }

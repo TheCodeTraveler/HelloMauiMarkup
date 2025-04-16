@@ -19,6 +19,7 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: |
+            9.0.x
             8.0.x
             7.0.x
 
@@ -32,10 +33,10 @@ jobs:
 
       - name: Build Android App
         run: |
-          dotnet build ./src -f net8.0-android
+          dotnet build ./src -f net9.0-android
 
   Build_iOS:
-    runs-on: macos-13
+    runs-on: macos-15
 
     steps:
       - uses: actions/checkout@v4
@@ -44,6 +45,7 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: |
+            9.0.x
             8.0.x
             7.0.x
 
@@ -62,10 +64,10 @@ jobs:
 
       - name: Build iOS App
         run: |
-          dotnet build ./src -f net8.0-ios
+          dotnet build ./src -f net9.0-ios
           
   Build_MacCatalyst:
-    runs-on: macos-13
+    runs-on: macos-15
 
     steps:
       - uses: actions/checkout@v4
@@ -74,6 +76,7 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: |
+            9.0.x
             8.0.x
             7.0.x
 
@@ -92,7 +95,7 @@ jobs:
 
       - name: Build macOS App
         run: |
-          dotnet build ./src -f net8.0-maccatalyst
+          dotnet build ./src -f net9.0-maccatalyst
 
   Build_Windows:
     runs-on: windows-latest
@@ -103,12 +106,13 @@ jobs:
       - uses: actions/setup-java@v4
         with:
           distribution: 'microsoft'
-          java-version: '11'
+          java-version: '17'
 
       - name: Install .NET
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: |
+            9.0.x
             8.0.x
             7.0.x
 
